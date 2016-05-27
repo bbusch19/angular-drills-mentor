@@ -1,7 +1,21 @@
 <html ng-app="apiApp">
-	<body>
-		
-				<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<body ng-controller="mainCtrl">
+		<form ng-submit="getPokemonByName(pokeName)">
+			<input ng-model="pokeName" placeholder="Search by Name"/>
+		</form>
+		<div ng-if="loading">
+			Loading.....
+		</div>
+
+		<ul>
+			<li>
+				Name: {{pokemon.name}}
+			</li>
+			<li>
+				Height: {{pokemon.height}}
+			</li>
+		</ul>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
 		<script src="app.js"></script>
 		<script src="controller.js"></script>
 		<script src="service.js"></script>
